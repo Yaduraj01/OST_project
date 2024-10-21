@@ -16,7 +16,8 @@ function todo(){
 		-a|--add)	mode=2 ;;
 		*[0-9]*)	mode=3 ;;
 		-q|--quiet)	mode=4 ;;
-		*)		mode=5 ;;
+		*) echo "Invalid option or argument. Use -h or --help for usage information." ; return ;;
+
 	esac
 	if [[ "${mode}" =~ ^[0-5]$ ]]; then
 		if [[ "${mode}" -eq 0 ]]; then
